@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>🧠 Computer Science Flashcards</h1>
-      <h3>Test your CS knowledge!</h3>
+      <h3>Test your CS knowledge! Sharnica Jeudy Z23582376</h3>
       <h4>Number of cards: {cards.length}</h4>
 
       <Card 
