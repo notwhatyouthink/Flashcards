@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useState } from 'react';
+import Card from './components/Card';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+
+  const cards = [
+    { question: "What does HTML stand for?", answer: "HyperText Markup Language" },
+    { question: "What does CSS stand for?", answer: "Cascading Style Sheets" },
+    { question: "What is a variable?", answer: "A container for storing data values" },
+    { question: "What does API stand for?", answer: "Application Programming Interface" },
+    { question: "What is a function?", answer: "A reusable block of code that performs a specific task" },
+    { question: "What does SQL stand for?", answer: "Structured Query Language" },
+    { question: "What is debugging?", answer: "The process of finding and fixing errors in code" },
+    { question: "What is Git?", answer: "A version control system for tracking changes in code" },
+    { question: "What does JSON stand for?", answer: "JavaScript Object Notation" },
+    { question: "What is React?", answer: "A JavaScript library for building user interfaces" }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
+  }
+
+  const handleNextCard = () => {
+    const randomIndex = Math.floor(Math.random() * cards.length);
+    setCurrentIndex(randomIndex);
+    setIsFlipped(false);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <h1>🧠 Computer Science Flashcards</h1>
+      <h3>Test your CS knowledge!</h3>
+      <h4>Number of cards: {cards.length}</h4>
+
+      <Card 
+        question={cards[currentIndex].question}
+        answer={cards[currentIndex].answer}
+        isFlipped={isFlipped}
+        onCardClick={handleCardClick}
+      />
+
+      <button onClick={handleNextCard}>Next Card →</button>
+    </div>
   )
 }
 
-export default App
+export default App;
