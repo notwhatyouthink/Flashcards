@@ -33,9 +33,7 @@ The following **optional** features are implemented:
     - Difficulty: Easy/medium/hard
     - Subject: Biology/Chemistry/Physics/Earth science
 
-The following **additional** features are implemented:
 
-* [x] N/A
 
 ## Video Walkthrough
 
@@ -50,9 +48,6 @@ GIF created with ... ScreenToGif
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
-## Notes
-
-N/A
 
 ## License
 
