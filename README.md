@@ -1,6 +1,6 @@
 # Web Development Project 2 - *Flashcards*
 
-Submitted by: **Sharnica Jeudy Z23582376**
+Submitted by: **Sharnica Jeudy**
 
 This web app: **A React-based flashcard application with 3D flip animations and difficulty-based color coding that allows users to study computer science concepts through interactive question-and-answer cards with randomized navigation.**
 
